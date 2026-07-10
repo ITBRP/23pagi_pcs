@@ -14,17 +14,15 @@ class MahasiswaController extends Controller
 
     public function submit(Request $request)
     {
-        // dd($request->all());
-
-        // $data = $request->except('_token');
-        // Mahasiswa::create($data);
-
         Mahasiswa::create($request->all());
-        // return redirect()->route('mahasiswa.form');
+        return redirect()->route('mahasiswa.data');
     }
 
     public function data()
     {
-        return view('mahasiswa.data');
+        $data = Mahasiswa::all();
+        // $ary = Mahasiswa::get()->toArray();
+        // dd($data, $ary);
+        return view('mahasiswa.data', compact('data'));
     }
 }
