@@ -21,8 +21,6 @@ class MahasiswaController extends Controller
     public function data()
     {
         $data = Mahasiswa::all();
-        // $ary = Mahasiswa::get()->toArray();
-        // dd($data, $ary);
         return view('mahasiswa.data', compact('data'));
     }
 }
