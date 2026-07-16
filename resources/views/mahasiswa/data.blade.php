@@ -42,7 +42,7 @@
                                         <td>
                                             <a href="{{ route('mahasiswa.edit', $item->id) }}">Edit</a>
                                             <form action="{{ route('mahasiswa.delete', $item->id) }}" method="POST"
-                                                onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
+                                                onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit">Hapus</button>
