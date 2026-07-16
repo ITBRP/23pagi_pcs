@@ -29,6 +29,7 @@
                                     <th>NIM</th>
                                     <th>Nama</th>
                                     <th>Alamat</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,6 +39,15 @@
                                         <td>{{ $item->nim }}</td>
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->alamat }}</td>
+                                        <td>
+                                            <a href="{{ route('mahasiswa.edit', $item->id) }}">Edit</a>
+                                            <form action="{{ route('mahasiswa.delete', $item->id) }}" method="POST"
+                                                onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit">Hapus</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
